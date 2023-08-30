@@ -1,0 +1,29 @@
+version: '3'
+services:
+  mysql_staging:
+    image: mysql:5.7
+    tty: true
+    restart: always
+    container_name: mysql-db-staging
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpwd
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: simple-crud-db
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+    ports:
+      - "9906:3306"
+
+  simple_crud:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8050:50"
+    volumes:
+      - ./src:/var/www/html
+
+volumes:
+  mysql_data:
