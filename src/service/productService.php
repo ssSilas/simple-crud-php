@@ -15,9 +15,23 @@ class ProductService {
     }
 
     public function addProduct($data) {
-        $stmt = $this->conn->prepare("INSERT INTO tasks (data) VALUES (:data)");
-        $stmt->bindParam(':data', $data);
-        return $stmt->execute();
+        $name = $data["name"];
+        $price = $data["price"];
+        $brand = $data["brand"];
+        $type = $data["type"];
+        $stock = $data["stock"];
+
+        $stmt = $this->conn->prepare(
+            "INSERT INTO product (name, price, brand, type, stock) 
+            VALUES (:name, :price, :brand, :type, :stock)"
+        );
+        var_dump($stmt);
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':price', $price);
+        $stmt->bindParam(':brand', $brand);
+        $stmt->bindParam(':type', $type);
+        $stmt->bindParam(':stock', $stock);
+        echo $stmt->execute();
     }
 
     public function completeTask($id) {

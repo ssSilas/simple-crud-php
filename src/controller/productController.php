@@ -19,8 +19,7 @@ class ProductController {
     }
 
     public function addTask($data) {
-        $title = $data;
-        if ($title) {
+        if ($data) {
             $this->productService->addProduct($data);
             echo json_encode(['message' => 'Tarefa adicionada com sucesso.']);
         } else {
@@ -45,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     return $productController->getProduct();
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents('php://input'), true);
-//     return $productController->addTask($data);
+    return $productController->addTask($data);
 // } elseif ($_SERVER['REQUEST_METHOD'] === 'PUT') {
 //     $data = json_decode(file_get_contents('php://input'), true);
 //     return $productController->completeTask($data);
