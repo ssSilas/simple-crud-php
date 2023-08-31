@@ -2,7 +2,7 @@
 
 CRUD simples para avaliar o funcionamento de um crud utilizando php | mysql | docker
 
-## Instalar Docker-compose - Ubunutu
+## Instalar Docker-compose - Ubuntu
 
 Para isso, siga as instruções no link contidas [aqui](https://www.hostinger.com.br/tutoriais/install-docker-ubuntu?ppc_campaign=google_search_generic_hosting_all&bidkw=defaultkeyword&lo=9101135&gclid=Cj0KCQjw0bunBhD9ARIsAAZl0E3F532PUbI60o1To9eaUBVaSAngOmIdEdOsLX0pwaVkIRdwPHmfO6EaAtHiEALw_wcB)
 
